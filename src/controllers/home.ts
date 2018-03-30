@@ -5,7 +5,7 @@ import { Request, Response } from "express";
  * Home page.
  */
 export let index = (req: Request, res: Response) => {
-  res.render("client/home", {
+  res.render("user/home", {
     title: "Home"
   });
 };

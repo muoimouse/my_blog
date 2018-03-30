@@ -4,5 +4,9 @@ import { Request, Response, NextFunction } from "express";
 import { WriteError } from "mongodb";
 
 /**
- * GET
+ * GET /post
+ * Port page
  */
+export let index = (req: Request, res: Response) => {
+  res.render("client/article");
+};

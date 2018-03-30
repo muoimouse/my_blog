@@ -3,13 +3,11 @@ import moment from "moment";
 
 const now = moment(moment.now()).format();
 export type ArticleModel = mongoose.Document & {
-    title: string;
-    category: String;
-    content: string;
-    tags: string;
-    image: string;
-    created: string;
-    modified: string;
+    title: string,
+    category: string,
+    content: string,
+    tags: string,
+    image: string
 };
 
 const articleSchema = new mongoose.Schema({
@@ -18,9 +16,7 @@ const articleSchema = new mongoose.Schema({
     content: { type: String },
     tags: { type: Array },
     image: { type: String },
-    created: { type: String, default: now },
-    modified: { type: String, default: now }
-});
+}, { timestamps: true });
 
 const Article = mongoose.model("Article", articleSchema);
 export default Article;

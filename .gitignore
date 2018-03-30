@@ -38,4 +38,6 @@ Thumbs.db
 dist/**/*
 
 # Ignore output from coverage report
-coverage
+/package-lock.json
+data/
+src/public/vendor/

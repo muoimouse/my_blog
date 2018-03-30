@@ -22,7 +22,7 @@ services:
     working_dir: /var/www/html/app
     command: >
       bash -c "npm install && npm run watch"
-      bash -c "npm install && npm run build && npm start"
+#      bash -c "npm install && npm run build && npm start"
   nginx:
     image: nginx:1.13.8
     container_name: "blog_nginx"

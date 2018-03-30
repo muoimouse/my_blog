@@ -7,6 +7,7 @@ export type UserModel = mongoose.Document & {
   password: string,
   passwordResetToken: string,
   passwordResetExpires: Date,
+  type: string,
 
   facebook: string,
   tokens: AuthToken[],
@@ -33,6 +34,11 @@ const userSchema = new mongoose.Schema({
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
+  type: {
+    type: String,
+    default: "user",
+    enum: ["admin", "user"]
+  },
 
   facebook: String,
   twitter: String,

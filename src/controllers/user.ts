@@ -10,20 +10,20 @@ const request = require("express-validator");
 
 
 /**
- * GET /login
+ * GET /admin/login
  * Login page.
  */
 export let getLogin = (req: Request, res: Response) => {
   if (req.user) {
-    return res.redirect("/");
+    return res.redirect("/admin");
   }
-  res.render("account/login", {
-    title: "Login"
+  res.render("admin/account/login", {
+    title: "Login Blog Admin"
   });
 };
 
 /**
- * POST /login
+ * POST /admin/login
  * Sign in using email and password.
  */
 export let postLogin = (req: Request, res: Response, next: NextFunction) => {
@@ -35,19 +35,19 @@ export let postLogin = (req: Request, res: Response, next: NextFunction) => {
 
   if (errors) {
     req.flash("errors", errors);
-    return res.redirect("/login");
+    return res.redirect("admin/login");
   }
 
   passport.authenticate("local", (err: Error, user: UserModel, info: IVerifyOptions) => {
     if (err) { return next(err); }
     if (!user) {
       req.flash("errors", info.message);
-      return res.redirect("/login");
+      return res.redirect("/admin/login");
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/");
+      res.redirect(req.session.returnTo || "/admin/dashboard");
     });
   })(req, res, next);
 };
@@ -58,7 +58,7 @@ export let postLogin = (req: Request, res: Response, next: NextFunction) => {
  */
 export let logout = (req: Request, res: Response) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/admin/login");
 };
 
 /**
