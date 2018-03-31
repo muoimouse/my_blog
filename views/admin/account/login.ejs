@@ -9,8 +9,8 @@
 
 		<!-- #CSS Links -->
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="../vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="../vendor/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="../css/font-awesome.min.css">
 
 		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
 		<!--<link rel="stylesheet" type="text/css" media="screen" href="../css/smartadmin-production-plugins.min.css">-->
@@ -37,9 +37,9 @@
 			<!-- MAIN CONTENT -->
 			<div id="content" class="container">
 
-					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4" style="margin: auto">
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-lg-offset-4">
 						<div class="well no-padding">
-							<form action="index.html" id="login-form" class="smart-form client-form">
+							<form action="/admin/login" method="POST" id="login-form" class="smart-form client-form">
 								<header>
 									Sign In
 								</header>
@@ -85,14 +85,14 @@
 		<!--================================================== -->	
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script src="../vendor/jquery/pace.min.js"></script>
+		<script src="../js/plugin/pace/pace.min.js"></script>
 
     <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+		<script> if (!window.jQuery) { document.write('<script src="../js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
+		<script> if (!window.jQuery.ui) { document.write('<script src="../js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>
 
 		<!-- IMPORTANT: APP CONFIG -->
 		<script src="../js/app.config.js"></script>
@@ -101,13 +101,13 @@
 		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
 
 		<!-- BOOTSTRAP JS -->		
-		<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap/bootstrap.min.js"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="../vendor/jquery/jquery.validate.min.js"></script>
+		<script src="../js/plugin/jquery-validate/jquery.validate.min.js"></script>
 		
 		<!-- JQUERY MASKED INPUT -->
-		<script src="../vendor/jquery/jquery.maskedinput.min.js"></script>
+		<script src="../js/plugin/masked-input/jquery.maskedinput.min.js"></script>
 		
 		<!--[if IE 8]>
 			

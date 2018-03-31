@@ -6,6 +6,7 @@ import { default as User, UserModel, AuthToken } from "../models/User";
 import { Request, Response, NextFunction } from "express";
 import { IVerifyOptions } from "passport-local";
 import { WriteError } from "mongodb";
+import {compareSync} from "bcrypt-nodejs";
 const request = require("express-validator");
 
 
@@ -27,6 +28,7 @@ export let getLogin = (req: Request, res: Response) => {
  * Sign in using email and password.
  */
 export let postLogin = (req: Request, res: Response, next: NextFunction) => {
+  console.log(req);
   req.assert("email", "Email is not valid").isEmail();
   req.assert("password", "Password cannot be blank").notEmpty();
   req.sanitize("email").normalizeEmail({ gmail_remove_dots: false });
